@@ -39,9 +39,10 @@ public struct ChangeGroupView: View {
     
     // MARK: - Private
     
-    private func changeVariation(_ variation: Variation? = nil) {
+    private func changeVariation(_ group: Group? = nil, _ variation: Variation? = nil) {
         
-        if !isCorrectGroupName() {
+        if newGroupName.isEmpty {
+            errorMessage = ErrorMessage(text: "Empty group name")
             return
         }
         newGroupName = newGroupName.trimmingCharacters(in: .whitespaces)
@@ -62,12 +63,15 @@ public struct ChangeGroupView: View {
             errorMessage = ErrorMessage(text: "This variation name in this group is taken")
             return
         }
-        if let variation = variation,
-            let index = groups[groupIndex].variations.firstIndex(of: variation) {
-            groups[groupIndex].variations[index] = Variation(
-                name: newVariationName,
-                probabilty: probabiltyNumber
-            )
+        if let variation = variation, let group = group, let oldGroupIndex = groups.firstIndex(of: group) {
+            if let variationIndex = groups[groupIndex].variations.firstIndex(of: variation) {
+                groups[groupIndex].variations[variationIndex] = Variation(name: newVariationName, probabilty: probabiltyNumber)
+            } else {
+                groups[oldGroupIndex].variations.removeAll(where: { $0.name == variation.name })
+                groups[groupIndex].variations.append(
+                    Variation(name: newVariationName, probabilty: probabiltyNumber)
+                )
+            }
         } else {
             groups[groupIndex].variations.append(
                 Variation(name: newVariationName, probabilty: probabiltyNumber)
@@ -128,8 +132,8 @@ public struct ChangeGroupView: View {
                         changeVariation()
                     case .editGroup(let group):
                         changeGroup(group)
-                    case .editVariation( _, let variation):
-                        changeVariation(variation)
+                    case .editVariation(let group, let variation):
+                        changeVariation(group,variation)
                     case .disable:
                         return
                     }
