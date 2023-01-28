@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		54036DAE29840FFD0074F51E /* PhraseGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54036DAD29840FFD0074F51E /* PhraseGeneratorApp.swift */; };
-		54036DB029840FFD0074F51E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54036DAF29840FFD0074F51E /* ContentView.swift */; };
+		54036DB029840FFD0074F51E /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54036DAF29840FFD0074F51E /* GroupListView.swift */; };
 		54036DB2298410010074F51E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54036DB1298410010074F51E /* Assets.xcassets */; };
 		54036DB5298410010074F51E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54036DB4298410010074F51E /* Preview Assets.xcassets */; };
+		5495620929845E7900D2EE21 /* ChangeModeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495620829845E7800D2EE21 /* ChangeModeState.swift */; };
+		5495620B29845F0C00D2EE21 /* ChangeGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495620A29845F0B00D2EE21 /* ChangeGroupView.swift */; };
+		5495620D298465D700D2EE21 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495620C298465D700D2EE21 /* Group.swift */; };
+		5495620F298465E000D2EE21 /* Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495620E298465E000D2EE21 /* Variation.swift */; };
+		54956211298465F200D2EE21 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54956210298465F200D2EE21 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		54036DAA29840FFD0074F51E /* PhraseGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhraseGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54036DAD29840FFD0074F51E /* PhraseGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseGeneratorApp.swift; sourceTree = "<group>"; };
-		54036DAF29840FFD0074F51E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		54036DAF29840FFD0074F51E /* GroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListView.swift; sourceTree = "<group>"; };
 		54036DB1298410010074F51E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54036DB4298410010074F51E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5495620829845E7800D2EE21 /* ChangeModeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeModeState.swift; sourceTree = "<group>"; };
+		5495620A29845F0B00D2EE21 /* ChangeGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGroupView.swift; sourceTree = "<group>"; };
+		5495620C298465D700D2EE21 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		5495620E298465E000D2EE21 /* Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variation.swift; sourceTree = "<group>"; };
+		54956210298465F200D2EE21 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,10 @@
 		54036DAC29840FFD0074F51E /* PhraseGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				54036DBC298414F60074F51E /* Models */,
+				54036DBB298414EC0074F51E /* PresentationLayer */,
 				54036DAD29840FFD0074F51E /* PhraseGeneratorApp.swift */,
-				54036DAF29840FFD0074F51E /* ContentView.swift */,
+				54036DAF29840FFD0074F51E /* GroupListView.swift */,
 				54036DB1298410010074F51E /* Assets.xcassets */,
 				54036DB3298410010074F51E /* Preview Content */,
 			);
@@ -65,6 +77,41 @@
 				54036DB4298410010074F51E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		54036DBB298414EC0074F51E /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5495620A29845F0B00D2EE21 /* ChangeGroupView.swift */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		54036DBC298414F60074F51E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				549562132984660600D2EE21 /* Enums */,
+				549562122984660000D2EE21 /* Plains */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		549562122984660000D2EE21 /* Plains */ = {
+			isa = PBXGroup;
+			children = (
+				54956210298465F200D2EE21 /* ErrorMessage.swift */,
+				5495620E298465E000D2EE21 /* Variation.swift */,
+				5495620C298465D700D2EE21 /* Group.swift */,
+			);
+			path = Plains;
+			sourceTree = "<group>";
+		};
+		549562132984660600D2EE21 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5495620829845E7800D2EE21 /* ChangeModeState.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54036DB029840FFD0074F51E /* ContentView.swift in Sources */,
+				54036DB029840FFD0074F51E /* GroupListView.swift in Sources */,
+				54956211298465F200D2EE21 /* ErrorMessage.swift in Sources */,
+				5495620F298465E000D2EE21 /* Variation.swift in Sources */,
+				5495620929845E7900D2EE21 /* ChangeModeState.swift in Sources */,
+				5495620B29845F0C00D2EE21 /* ChangeGroupView.swift in Sources */,
+				5495620D298465D700D2EE21 /* Group.swift in Sources */,
 				54036DAE29840FFD0074F51E /* PhraseGeneratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhraseGenerator/Preview Content\"";
+				DEVELOPMENT_TEAM = H6F8KM7F3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -297,6 +350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhraseGenerator/Preview Content\"";
+				DEVELOPMENT_TEAM = H6F8KM7F3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
